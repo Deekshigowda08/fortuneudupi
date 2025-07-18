@@ -71,7 +71,7 @@ const Navbar = () => {
         <header className='h-[550px]'>
             <div className={` sm:right-0 z-50 p-7 ${scrolled ? 'fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm shadow-md' : ''}`}>
                 <nav className='flex items-center justify-between p-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000] '>
-                    <Link href="/" className='flex gap-5 font-bold text-[#fff]'>
+                    <Link href="/" className='flex items-center gap-5 font-bold text-[#fff]'>
                         {/* Add priority to the Image component */}
                         <Image
                             className='w-[50px] object-cover'
@@ -80,7 +80,8 @@ const Navbar = () => {
                             priority
                             width={100}
                             height={100}
-                        />
+                        /> 
+                        <span className='text-xl sm:text-2xl'>Fortune</span>
                     </Link>
 
                     <div className='gap-10 text-[#ffffff] hidden sm:flex'>
