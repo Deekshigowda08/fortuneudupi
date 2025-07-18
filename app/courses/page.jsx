@@ -115,6 +115,15 @@ const Section = ({ title, icon, courses }) => (
           <p className="text-sm font-medium">
             Price: <span className="text-green-700">{course.price}</span>
           </p>
+          <p className="text-sm font-medium">
+            Price: <span className="text-green-700">{course.price}</span>
+          </p>
+          <a href={`/register?course=${encodeURIComponent(course.name)}`}>
+            <button className="mt-4 cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+              Register
+            </button>
+          </a>
+
         </div>
       ))}
     </div>
