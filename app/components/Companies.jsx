@@ -1,74 +1,3 @@
-// // components/CompanySwiper.jsx
-// 'use client'
-
-// import React from 'react'
-// import Image from 'next/image'
-// import { Swiper, SwiperSlide } from 'swiper/react'
-// import { EffectCards, Autoplay } from 'swiper/modules'
-// import 'swiper/css'
-// import 'swiper/css/effect-cards'
-
-// const companies = [
-//     '/companies/tcs.png',
-//     '/companies/capgemini.webp',
-//     '/companies/wipro.png',
-//     '/companies/ibm.png',
-//     '/companies/deloitte.png',
-//     '/companies/genpact.png',
-//     '/companies/tata-steel.webp',
-//     '/companies/accenture.png',
-//     '/companies/pride-hotels.png',
-//     '/companies/itc-hotels.png',
-//     '/companies/novotel.png',
-//     '/companies/taj.png',
-//     '/companies/tech-mahindra.png',
-//     '/companies/itc-infotech.png',
-//     '/companies/birlasoft.png',
-//     '/companies/marriott.png',
-//     '/companies/the-oberoi.png',
-//     '/companies/the-park.jpg',
-//     '/companies/vedic-village.jpeg',
-//     '/companies/yash-technologies.jpeg',
-//     '/companies/arodek.png',
-//     '/companies/ntt-data.png',
-//     '/companies/patton.png',
-//     '/companies/visa-steel.jpg',
-// ]
-
-// const Companies = () => {
-//     return (
-//         <div className="max-w-sm mx-auto my-12">
-//             <Swiper
-//                 modules={[EffectCards, Autoplay]}
-//                 effect="cards"
-//                 grabCursor={true}
-//                 loop={true}
-//                 autoplay={{ delay: 2000, disableOnInteraction: false }}
-//                 className="h-[300px] w-full"
-//             >
-//                 {companies.map((logo, index) => (
-//                     <SwiperSlide
-//                         key={index}
-//                         className="flex items-center justify-center bg-white rounded-xl shadow-xl p-4"
-//                     >
-//                         <div className='w-full h-full flex items-center justify-center'>
-//                             <Image
-//                                 src={logo}
-//                                 alt={`Company ${index}`}
-//                                 width={200}
-//                                 height={100}
-//                                 className="object-contain"
-//                             />
-//                         </div>
-//                     </SwiperSlide>
-//                 ))}
-//             </Swiper>
-//         </div>
-//     )
-// }
-
-// export default Companies
-
 'use client'
 
 import React from 'react'
@@ -77,6 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCards, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const companies = [
   { logo: '/companies/tcs.png', gradient: 'linear-gradient(135deg, #1e3c72, #2a5298)' },
@@ -141,7 +72,25 @@ const Companies = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> 
+      <div className="flex flex-col items-center justify-center mt-20 space-y-8 px-4 text-center">
+      
+      <motion.p
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00095f] to-[#2599ff] animate-gradient-text"
+      >
+        Build your <span className="text-[#00ffff]">Fortune</span> with us
+      </motion.p>
+
+      <Link 
+        href="/courses"
+        className="px-6 smooth py-3 bg-gradient-to-br from-[#00ffff] to-[#00095f] border border-[#ffffff] text-black font-semibold rounded-xl backdrop-blur-lg shadow-xl transition duration-300 ease-in-out hover:scale-105 active:scale-95"
+      >
+        Register to a course
+      </Link>
+    </div>
     </section>
   )
 }
