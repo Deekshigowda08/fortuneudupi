@@ -15,17 +15,11 @@ export default function Home() {
 
       <About />
       
-      <div className='h-[2px] bg-[#ffffff69] w-full my-20'></div>
-      
       <Courses />
-      
-      <div className='h-[2px] bg-[#ffffff69] w-full my-20'></div>
-
-      {/* <Activities /> */}
 
       <Companies />
 
-      <div className='h-[2px] bg-[#ffffff69] w-full my-20'></div>
+<Activities/>
       
       <Contact />
 

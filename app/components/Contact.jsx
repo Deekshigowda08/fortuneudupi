@@ -47,7 +47,7 @@ const Contact = () => {
                             name="user_name"
                             required
                             placeholder="Your Name"
-                            className="w-full rounded-md p-3 bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all text-white placeholder-gray-400"
+                            className="w-full rounded-md p-3 bg-white border border-white focus:outline-none focus:ring-2 focus:ring-white transition-all text-black placeholder-gray-400"
                         />
                     </div>
 
@@ -58,7 +58,7 @@ const Contact = () => {
                             name="user_email"
                             required
                             placeholder="Your Email"
-                            className="w-full rounded-md p-3 bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all text-white placeholder-gray-400"
+                            className="w-full rounded-md p-3 bg-white border border-white focus:outline-none focus:ring-2 focus:ring-white transition-all text-black placeholder-gray-400"
                         />
                     </div>
 
@@ -69,7 +69,7 @@ const Contact = () => {
                             rows="5"
                             required
                             placeholder="Your Message"
-                            className="w-full rounded-md p-3 bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all text-white placeholder-gray-400 resize-none"
+                            className="w-full rounded-md p-3 bg-white border border-white focus:outline-none focus:ring-2 focus:ring-white transition-all text-black placeholder-gray-400 resize-none"
                         />
                     </div>
 
