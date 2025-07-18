@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'tommy';
+  src: url('/fonts/made_tommy/MADE TOMMY Regular_PERSONAL USE.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'tommy', sans-serif;
+}
+
+
+.smooth{
+  transition: all ease-in-out 0.5s;
+}
+
+.navshad{
+  box-shadow: 0px 0px 5px 2px #000000bc;
+}
+.crdshdw:hover{
+  box-shadow: 0px 0px 7px 2px #ffffff;
+}
+
+.befaft::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+}
+
+.befaft:hover::after{
+  animation: wztoh 0.3s ease-in-out 1;
+  width: 100%;
+}
+
+.befaft:active:after{
+  background: #ffffff;
+}
+
+@keyframes wztoh {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+.asushad{
+  box-shadow: 0px 0px 7px 2px #0000007b;
+}
+
+/* styles/globals.css or in your layout */
+.swiper-slide .swiper-slide-image {
+  filter: blur(4px);
+  scale: 0.95;
+}
+
+.swiper-slide-active .swiper-slide-image {
+  filter: none;
+  scale: 1;
+}
