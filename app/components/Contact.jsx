@@ -1,34 +1,43 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { MdEmail } from 'react-icons/md';
 import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
-    const form = useRef();
+    const formRef = useRef();
     const [status, setStatus] = useState('');
+    const [email, setEmail] = useState("");
+    const [name, setname] = useState("");
+    const [course, setcourse] = useState("");
+    const [phone, setphone] = useState("");
+    const [message, setMessage] = useState("");
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
+    async function sendEmail(formData) {
+        const serviceId = "service_3u9meos";
+        const templateId = "template_xr75hbg";
+        const userId = "RB2SELaSlhZIBBaI9";
 
         emailjs
-            .sendForm(
-                'your_service_id',
-                'your_template_id',
-                form.current,
-                'your_public_key'
-            )
-            .then(
-                () => {
-                    setStatus('Message sent!');
-                    form.current.reset();
-                },
-                () => {
-                    setStatus('Something went wrong...');
-                }
-            );
+            .send(serviceId, templateId, formData, userId)
+            .then((response) => {
+                console.log("Email sent successfully!", response.status, response.text);
+
+                // Reset fields
+                setEmail("");
+                setMessage("");
+                setname("");
+            })
+            .catch((error) => {
+                toast("Failed to send message. Please try again.", { type: "error" });
+                console.error("Failed to send email.", error);
+            });
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!formRef.current) return;
+        sendEmail({ name, email, phone, course, message });
     };
 
     return (
@@ -37,28 +46,33 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="sm:w-[600px] sm:mx-auto mx-5 bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-12 shadow-lg border border-white/10">
-                <form ref={form} onSubmit={sendEmail} className="space-y-8">
+                <form ref={formRef}
+                    onSubmit={handleSubmit} className="space-y-8">
                     <h2 className="text-xl sm:text-3xl font-semibold text-center mb-2">Send us an email</h2>
 
                     {/* Name */}
                     <div className="relative">
                         <input
+                            name="name"
                             type="text"
-                            name="user_name"
+                            value={name}
+                            onChange={(e) => setname(e.target.value)}
                             required
                             placeholder="Your Name"
-                            className="w-full rounded-md p-3 bg-white border border-white focus:outline-none focus:ring-2 focus:ring-white transition-all text-black placeholder-gray-400"
+                            className="w-full rounded-md p-3 bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out text-black placeholder-gray-400"
                         />
                     </div>
 
                     {/* Email */}
                     <div className="relative">
                         <input
+                            name="email"
                             type="email"
-                            name="user_email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                             placeholder="Your Email"
-                            className="w-full rounded-md p-3 bg-white border border-white focus:outline-none focus:ring-2 focus:ring-white transition-all text-black placeholder-gray-400"
+                            className="w-full rounded-md p-3 bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out text-black placeholder-gray-400"
                         />
                     </div>
 
@@ -66,10 +80,12 @@ const Contact = () => {
                     <div className="relative">
                         <textarea
                             name="message"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                             rows="5"
                             required
                             placeholder="Your Message"
-                            className="w-full rounded-md p-3 bg-white border border-white focus:outline-none focus:ring-2 focus:ring-white transition-all text-black placeholder-gray-400 resize-none"
+                            className="w-full rounded-md p-3 bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out text-black placeholder-gray-400 resize-none"
                         />
                     </div>
 
@@ -87,6 +103,8 @@ const Contact = () => {
                     )}
                 </form>
             </div>
+
+
             {/* Contact Info */}
             <h2 className="text-2xl sm:text-3xl font-semibold text-center mt-2">Contact Info</h2>
             <div className="space-y-4 text-lg text-center">

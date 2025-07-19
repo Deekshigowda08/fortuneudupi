@@ -21,9 +21,9 @@ const activities = [
   },
 ];
 
-const Activities = () => {
+const Activities = (id) => {
   return (
-    <section id="activities" className="px-6 py-20 md:px-16 lg:px-32 bg-white text-black mt-2">
+    <section id="addon" className="px-6 py-20 md:px-16 lg:px-32 bg-white text-black mt-2">
       <div className="mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold">Add On Provided By</h2>
         <p className="text-indigo-600 font-medium mt-2">Fortune Computer Classes</p>

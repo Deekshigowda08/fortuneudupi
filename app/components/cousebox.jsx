@@ -14,10 +14,10 @@ export default function CourseBox({ image, title, link, description, id }) {
   return (
     <div
       className="bg-white rounded-md overflow-hidden shadow-2xl p-0 flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-lg sticky md:static"
-      style={{ top: `${100 + id * 30}px`, height: '300px' }}
+      style={{ top: `${100 + id * 40}px`, height: '260px' }}
     >
       {/* Image Container */}
-      <div className="h-1/2 w-full relative">
+      <div className="h-[40%] w-full relative">
         <Image
           src={image || "/placeholder.svg"}
           alt={title}
@@ -35,7 +35,7 @@ export default function CourseBox({ image, title, link, description, id }) {
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col h-1/2 relative z-10 bg-black">
+      <div className="p-5 flex flex-col h-[60%] relative z-10 bg-black">
         <h3 className="text-xs font-medium uppercase tracking-wider mb-2 text-white">{title}</h3>
         <p className="text-xs mb-4 flex-grow text-white">{description}</p>
         <div className="mt-auto">

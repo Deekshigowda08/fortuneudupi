@@ -31,7 +31,7 @@ const Page = () => {
     <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#3a3a3a] to-[#000000] px-4 py-16">
       <div className="w-full max-w-xl bg-gradient-to-b from-[#343434] to-[#000000] backdrop:blur-2xl rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-10  text-white">
         <h1 className="text-4xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
-          Register for {course || "a Course"}
+          Register for {course.replace("_"," ") || "a Course"}
         </h1>
 
         {submitted ? (
@@ -63,7 +63,7 @@ const Page = () => {
                 type="tel"
                 name="phone"
                 required
-                placeholder="9876543210"
+                placeholder="9999999999"
                 className="w-full px-4 py-2 bg-[#111] border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -83,7 +83,7 @@ const Page = () => {
               <label className="block mb-1 font-semibold">Selected Course</label>
               <input
                 type="text"
-                value={course || "Unknown"}
+                value={course.replace("_"," ")  || "Unknown"}
                 disabled
                 className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-xl text-gray-400 cursor-not-allowed"
               />
