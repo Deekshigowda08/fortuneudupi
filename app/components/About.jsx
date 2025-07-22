@@ -7,13 +7,13 @@ const About = () => {
   return (
     <motion.section
       id="about"
-      className="  max-w-12xl  bg-black text-white"
+      className="  max-w-12xl  bg-[#101129] text-white"
       initial={{ opacity: 0, y: 50 }}                  
       whileInView={{ opacity: 1, y: 0 }}               
       transition={{ duration: 0.8, ease: 'easeOut' }} 
       viewport={{ once: true, amount: 0.3 }}           
     >
-      <div className="bg-black text-white p-8 ">
+      <div className="bg-[#101129] mt-4 text-white p-8 ">
             <div className="max-w-8xl mx-auto">
               <p className="text-lg leading-relaxed ">
                 <span className="text-3xl font-serif leading-none">E</span>

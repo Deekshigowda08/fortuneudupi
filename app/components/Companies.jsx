@@ -9,100 +9,106 @@ import 'swiper/css/effect-cards'
 
 const teachers = [
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'John Doe', 
-    description: 'Experienced software engineer with expertise in full-stack development. Passionate about teaching and mentoring students in tech.',
+    name: 'Chinthan', 
+    description: 'Fortune Institute is an excellent coaching center that provides top-notch computer education at a reasonable price. The faculty is highly knowledgeable and supportive, providing a conducive learning environment.',
     gradient: 'linear-gradient(135deg, #1e3c72, #2a5298)' 
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Sarah Collins', 
-    description: 'Senior consultant at Capgemini with over 15 years of experience in business transformation and strategic consulting.',
+    name: 'Vaibhavi', 
+    description: 'The faculty are well experienced & class has very well maintained computers. One thing i love is teachers give individual attention to everyone with patience.',
     gradient: 'linear-gradient(135deg, #000428, #004e92)' 
   },
-  { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Arun Patel', 
-    description: 'AI/ML specialist with a passion for delivering innovative solutions. Arun has worked with Wipro for over 10 years.',
+  {  
+    name: 'Shravya', 
+    description: 'Lectures are friendly and helped me to clear the doubts whenever required and subjects are clearly understood',
     gradient: 'linear-gradient(135deg, #8e2de2, #4a00e0)' 
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Clara Thompson', 
-    description: 'A leader in cloud computing, Clara has spent over 12 years innovating with IBM. She’s an advocate for sustainable technology solutions.',
-    gradient: 'linear-gradient(135deg, #0f0f0f, #1a1a1a)' 
+    name: 'Kishor', 
+    description: 'Fortune Institute Of Computer Education offers multiple facilities including well-equipped computer labs, a library with a vast collection of resources, and comfortable study areas. Excellent!',
+    gradient: 'linear-gradient(135deg, #ffe000, #799f0c)'
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Michael Johnson', 
-    description: 'With a wealth of experience in management consulting, Michael specializes in finance and digital transformation.',
+    name: 'Nayana shetty', 
+    description: 'Fortune Institute of Computer Education has excellent faculty who are experts in their field. The coaching centre offers high-quality education at a reasonably priced. The faculty provides personalized attention and guidance to help students achieve their goals.',
     gradient: 'linear-gradient(135deg, #000000, #43e97b)' 
   },
-  { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Priya Sharma', 
-    description: 'An expert in data science and analytics, Priya has helped multiple companies unlock insights from complex data at Genpact.',
+  {  
+    name: 'Rakesh', 
+    description: 'Fortune Institute of Computer Education is an excellent coaching center that provides top-notch computer education without any extra fees. Their comprehensive courses and experienced instructors ensure that students receive the best quality education in the field of computer science.',
     gradient: 'linear-gradient(135deg, #2c3e50, #4ca1af)' 
   },
+   { 
+    name: 'Chinthan', 
+    description: 'Fortune Institute is an excellent coaching center that provides top-notch computer education at a reasonable price. The faculty is highly knowledgeable and supportive, providing a conducive learning environment.',
+    gradient: 'linear-gradient(135deg, #1e3c72, #2a5298)' 
+  },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Vikram Singh', 
-    description: 'A steel industry veteran, Vikram is a subject matter expert in industrial engineering and supply chain optimization.',
+    name: 'Vaibhavi', 
+    description: 'The faculty are well experienced & class has very well maintained computers. One thing i love is teachers give individual attention to everyone with patience.',
     gradient: 'linear-gradient(135deg, #000428, #004e92)' 
   },
-  { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Emma Roberts', 
-    description: 'Digital transformation consultant at Accenture, Emma specializes in the adoption of emerging technologies to streamline business operations.',
-    gradient: 'linear-gradient(135deg, #654ea3, #eaafc8)' 
+  {  
+    name: 'Shravya', 
+    description: 'Lectures are friendly and helped me to clear the doubts whenever required and subjects are clearly understood',
+    gradient: 'linear-gradient(135deg, #8e2de2, #4a00e0)' 
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'James Martinez', 
-    description: 'James is a hospitality management expert with over 20 years of experience in the luxury hotel industry, working across global brands.',
-    gradient: 'linear-gradient(135deg, #f7971e, #ffd200)' 
+    name: 'Kishor', 
+    description: 'Fortune Institute Of Computer Education offers multiple facilities including well-equipped computer labs, a library with a vast collection of resources, and comfortable study areas. Excellent!',
+    gradient: 'linear-gradient(135deg, #ffe000, #799f0c)'
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Ravi Desai', 
-    description: 'Ravi has been instrumental in driving hospitality innovation and sustainable tourism practices at ITC Hotels.',
-    gradient: 'linear-gradient(135deg, #dce35b, #45b649)' 
+    name: 'Nayana shetty', 
+    description: 'Fortune Institute of Computer Education has excellent faculty who are experts in their field. The coaching centre offers high-quality education at a reasonably priced. The faculty provides personalized attention and guidance to help students achieve their goals.',
+    gradient: 'linear-gradient(135deg, #000000, #43e97b)' 
+  },
+  {  
+    name: 'Rakesh', 
+    description: 'Fortune Institute of Computer Education is an excellent coaching center that provides top-notch computer education without any extra fees. Their comprehensive courses and experienced instructors ensure that students receive the best quality education in the field of computer science.',
+    gradient: 'linear-gradient(135deg, #2c3e50, #4ca1af)' 
+  },
+   { 
+    name: 'Chinthan', 
+    description: 'Fortune Institute is an excellent coaching center that provides top-notch computer education at a reasonable price. The faculty is highly knowledgeable and supportive, providing a conducive learning environment.',
+    gradient: 'linear-gradient(135deg, #1e3c72, #2a5298)' 
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Sophia Zhang', 
-    description: 'Sophia brings extensive expertise in hotel management and operations, ensuring Novotel stays at the forefront of guest experiences.',
-    gradient: 'linear-gradient(135deg, #0575e6, #021b79)' 
+    name: 'Vaibhavi', 
+    description: 'The faculty are well experienced & class has very well maintained computers. One thing i love is teachers give individual attention to everyone with patience.',
+    gradient: 'linear-gradient(135deg, #000428, #004e92)' 
+  },
+  {  
+    name: 'Shravya', 
+    description: 'Lectures are friendly and helped me to clear the doubts whenever required and subjects are clearly understood',
+    gradient: 'linear-gradient(135deg, #8e2de2, #4a00e0)' 
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Amit Kumar', 
-    description: 'Amit has over 15 years of experience managing luxury hotel brands, with a focus on customer satisfaction and operational excellence.',
-    gradient: 'linear-gradient(135deg, #8e0e00, #1f1c18)' 
+    name: 'Kishor', 
+    description: 'Fortune Institute Of Computer Education offers multiple facilities including well-equipped computer labs, a library with a vast collection of resources, and comfortable study areas. Excellent!',
+    gradient: 'linear-gradient(135deg, #ffe000, #799f0c)'
   },
   { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Neha Bansal', 
-    description: 'Neha is a seasoned IT consultant with deep expertise in business process outsourcing and customer relationship management.',
-    gradient: 'linear-gradient(135deg, #ff4b1f, #1fddff)' 
+    name: 'Nayana shetty', 
+    description: 'Fortune Institute of Computer Education has excellent faculty who are experts in their field. The coaching centre offers high-quality education at a reasonably priced. The faculty provides personalized attention and guidance to help students achieve their goals.',
+    gradient: 'linear-gradient(135deg, #000000, #43e97b)' 
   },
-  { 
-    photo: '/companies/randomperson.jpg', 
-    name: 'Raghav Gupta', 
-    description: 'A digital strategy expert with a passion for driving innovation at ITC Infotech, Raghav has worked on numerous global transformation projects.',
-    gradient: 'linear-gradient(135deg, #ffe000, #799f0c)' 
+  {  
+    name: 'Rakesh', 
+    description: 'Fortune Institute of Computer Education is an excellent coaching center that provides top-notch computer education without any extra fees. Their comprehensive courses and experienced instructors ensure that students receive the best quality education in the field of computer science.',
+    gradient: 'linear-gradient(135deg, #2c3e50, #4ca1af)' 
   },
 ];
 
 const Companies = () => {
   return (
     <>
-    <section  id="faculty" className="w-[99vw] overflow-hidden h-full mx-auto hidden md:block mt-10 px-5">
-      <h3 className="text-5xl mb-7 font-bold text-center">Our Faculty</h3>
+    <section  id="faculty" className="w-[99vw] overflow-hidden h-full mx-auto hidden bg-[#101129] md:block mt-10 px-5">
+      <h3 className="text-4xl mb-7 font-bold text-center">About Faculty And Students</h3>
 
       <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start mb-10'>
         <div className='max-w-3xl sm:text-lg leading-relaxed sm:mt-30 mt-1  ml-10'>
-          <span className="text-3xl  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students</strong>, helping them achieve their academic and professional goals. Our educators combine years of practical experience with a commitment to fostering an engaging, dynamic learning environment. Their ability to break down complex concepts and present them in a clear, approachable manner ensures that every student receives the highest quality of instruction. We take pride in our faculty's dedication to empowering students and driving success, making them some of the best in the industry.
+          <span className="text-2xl  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students</strong>, helping them achieve their academic and professional goals. Our educators combine years of practical experience with a commitment to fostering an engaging, dynamic learning environment. Their ability to break down complex concepts and present them in a clear, approachable manner ensures that every student receives the highest quality of instruction. We take pride in our faculty's dedication to empowering students and driving success, making them some of the best in the industry.
         </div>
 
         <Swiper
@@ -127,18 +133,12 @@ const Companies = () => {
               }}
             >
               <div className="text-center p-4 bg-white bg-opacity-70 rounded-lg shadow-md">
-                {/* Teacher Photo */}
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden">
-                  <img
-                    src={photo}
-                    alt={name}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
+               
 
                 {/* Teacher Name and Description */}
-                <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mt-4">{name}</h3>
-                <p className="text-sm sm:text-lg text-gray-600 mt-2">{description}</p>
+                
+                <p className="text-lg  font-bold text-gray-600 mt-2">"{description}"</p>
+                <p className="text-sm text-right font-bold text-gray-800 mt-4">-{name}</p>
               </div>
             </SwiperSlide>
           ))}
@@ -148,11 +148,11 @@ const Companies = () => {
 
     {/* This is for phone */}
     <section  id="faculties" className="w-[100vw] overflow-hidden h-full mx-auto md:hidden block mt-10 px-5">
-      <h3 className="text-3xl mb-7 font-bold text-center">About Faculty</h3>
+      <h3 className="text-2xl mb-7 font-bold text-center">About Faculty And Students</h3>
 
       <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start mb-10'>
         <div className='max-w-3xl sm:text-lg leading-relaxed sm:mt-30 mt-1  ml-6'>
-          <span className="text-3xl  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students</strong>
+          <span className="text-xl  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students.</strong>
         </div>
 
         <Swiper
@@ -177,18 +177,10 @@ const Companies = () => {
               }}
             >
               <div className="text-center p-4 bg-white bg-opacity-70 rounded-lg shadow-md">
-                {/* Teacher Photo */}
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden">
-                  <img
-                    src={photo}
-                    alt={name}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
 
                 {/* Teacher Name and Description */}
-                <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mt-4">{name}</h3>
-                <p className="text-sm sm:text-lg text-gray-600 mt-2">{description}</p>
+                <p className="text-md  font-bold text-gray-600 mt-2">"{description}"</p>
+                <p className="text-sm text-right font-extrabold text-gray-800 mt-4">-{name}</p>
               </div>
             </SwiperSlide>
           ))}

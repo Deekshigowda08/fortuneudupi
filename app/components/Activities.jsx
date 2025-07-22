@@ -15,8 +15,8 @@ const activities = [
   },
   {
     id: "03",
-    title: "VALUE-BASED EDUCATION",
-    subtitle: "Fortune Computer Classes offers value-based education, focusing not just on technical skills but also on ethics, problem-solving, and critical thinking, ensuring students are well-rounded and prepared for real-world challenges.",
+    title: "WE PROVIDE CSC CERTIFICATE",
+    subtitle: "Fortune Computer Classes provides comprehensive, value-based education with a focus on technical skills, ethics, and problem-solving. Upon successful completion, students receive a certificate from the CSC Education and Training Academy, recognized for its quality and credibility.",
     image: "/activities/act3.jpg",
   },
 ];

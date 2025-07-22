@@ -29,21 +29,21 @@ export default function CourseBox({ image, title, link, description, id }) {
         />
         
         {/* 50% OFF Badge */}
-        <div className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+        <div className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
           Limited Time Offer – Get 50% Off
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col h-[60%] relative z-10 bg-black">
-        <h3 className="text-xs font-medium uppercase tracking-wider mb-2 text-white">{title}</h3>
-        <p className="text-xs mb-4 flex-grow text-white">{description}</p>
+      <div className="p-5 flex flex-col h-[60%] relative z-10 bg-[#101129]">
+        <h3 className="text-xs font-extrabold uppercase tracking-wider mb-2 text-white">{title}</h3>
+        <p className="text-xs mb-2 flex-grow text-white">{description}</p>
         <div className="mt-auto">
           <Link
             href={link}
             className="inline-block bg-white text-black text-xs py-2 px-4 rounded-full hover:bg-gray-200 transition-colors"
           >
-            Register →
+            Explore →
           </Link>
         </div>
       </div>

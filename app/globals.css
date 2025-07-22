@@ -1,4 +1,22 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+/* Custom marquee animation */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -68,4 +86,162 @@ html {
 .swiper-slide-active .swiper-slide-image {
   filter: none;
   scale: 1;
+}
+.reachout-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 400px;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  border-radius: 20px;
+  background: rgb(0, 0, 0, 0.31);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  animation: fadeIn 0.4s ease;
+  z-index: 1000;
+}
+
+.reachout-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.reachout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reachout-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.reachout-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.reachout-input:focus {
+  border-color: #4f9dff;
+}
+
+.reachout-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reachout-submit {
+  background: linear-gradient(to right, #2563eb, #4338ca);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.reachout-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.reachout-cancel {
+  background: transparent;
+  color: #f87171;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.reachout-cancel:hover {
+  color: #f43f5e;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -55%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.reachout-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.course-offer-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #1e3a8a; /* Tailwind's blue-800 */
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  z-index: 1000;
+  animation: slideIn 0.4s ease;
+}
+
+.course-offer-box .close-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.course-offer-box .offer-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.course-offer-box .offer-list {
+  list-style: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

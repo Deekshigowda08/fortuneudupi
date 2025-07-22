@@ -2,16 +2,14 @@
 
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { MdEmail } from 'react-icons/md';
-import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
     const formRef = useRef();
     const [status, setStatus] = useState('');
     const [email, setEmail] = useState("");
     const [name, setname] = useState("");
-    const [course, setcourse] = useState("");
-    const [phone, setphone] = useState("");
     const [message, setMessage] = useState("");
 
     async function sendEmail(formData) {
@@ -37,11 +35,11 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!formRef.current) return;
-        sendEmail({ name, email, phone, course, message });
+        sendEmail({ name, email, message });
     };
 
     return (
-        <section id="contact" className="bg-black text-white mt-20 flex flex-col gap-5">
+        <section id="contact" className="bg-[#101129] text-white mt-20 flex flex-col gap-5">
             <h3 className="text-3xl sm:text-4xl font-bold text-center">Contact Us</h3>
 
             {/* Contact Form */}
@@ -107,14 +105,84 @@ const Contact = () => {
 
             {/* Contact Info */}
             <h2 className="text-2xl sm:text-3xl font-semibold text-center mt-2">Contact Info</h2>
-            <div className="space-y-4 text-lg text-center">
-                <p><FaPhoneAlt className="inline-block mr-2 text-blue-500" /> +91-9743294616 / +91-8618638126</p>
-                <p><MdEmail className="inline-block mr-2 text-red-400" /> ficeudupi@gmail.com / fortuneclassesin@gmail.com</p>
-                <p><FaMapMarkerAlt className="inline-block mr-2 text-green-500" /> Tulunadu Towers, 1st Floor, Court Road, Udupi 576101</p>
-            </div>
+           <div className="space-y-3 text-center text-lg">
+      {/* Social Media Icons */}
+      <div className="flex justify-center gap-6 mb-4">
+        <a
+          href="https://www.facebook.com/YOUR_PAGE"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+        >
+          <FaFacebookF />
+        </a>
+        <a
+          href="https://wa.me/919743294616"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+        >
+          <FaWhatsapp />
+        </a>
+        <a
+          href="https://www.instagram.com/fortune_udupi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-600 transition"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/YOUR_PROFILE"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-800 text-white hover:bg-blue-900 transition"
+        >
+          <FaLinkedinIn />
+        </a>
+      </div>
+
+      {/* Contact Info */}
+      <div className="space-y-1">
+        <p>
+          <FaPhoneAlt className="inline-block mr-2 text-blue-500" />
+          <a href="tel:+919743294616" className="hover:underline text-white text-sm font-bold">+91-9743294616</a> /{" "}
+          <a href="tel:+918618638126" className="hover:underline text-white text-sm font-bold">+91-8618638126</a>
+        </p>
+        <p>
+          <MdEmail className="inline-block mr-2 text-md px-1 text-red-400" />
+          <a href="mailto:ficeudupi@gmail.com" className="hover:underline text-white text-sm font-bold">ficeudupi@gmail.com</a> /{" "}
+          <a href="mailto:fortuneclassesin@gmail.com" className="hover:underline text-white text-sm font-bold">fortuneclassesin@gmail.com</a>
+        </p>
+      </div>
+
+      {/* Location */}
+      <p>
+        <FaMapMarkerAlt className="inline-block mr-2 text-green-500" />
+        <a
+          href="https://maps.app.goo.gl/p67NYm99JPjzWzk47"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline px-1 text-white text-sm"
+        >
+          <strong>Head Office : </strong>Tulunadu Towers,1st Floor,Udupi 576101
+        </a>
+      </p>
+      <p>
+        <FaMapMarkerAlt className="inline-block mr-2 text-green-500" />
+        <a
+          href="https://maps.app.goo.gl/p67NYm99JPjzWzk47"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline text- px-1 text-sm"
+        >
+          <strong>Branch : </strong>Bailoor Comlpex,1st floor,UDUPI 576101
+        </a>
+      </p>
+    </div>
 
             {/* Footer */}
-            <footer className="bg-blue-900 text-white text-sm sm:text-base text-center p-3 mt-4">
+            <footer className="bg-blue-900 text-white text-sm sm:text-base text-center p-3 mt-1">
                 <p>&copy; {new Date().getFullYear()} Fortune Institute of Computer Education. All rights reserved.</p>
             </footer>
         </section>

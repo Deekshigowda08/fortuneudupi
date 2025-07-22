@@ -49,7 +49,7 @@ const Navbar = () => {
             {/* Add priority to the Image component */}
             <Image className='w-[50px] object-cover' src={logo} alt="Logo" priority width={100} height={100} />
             <div className='text-3xl text-white'>
-              Fortune
+              FORTUNE
             </div>
           </Link>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
       </div>
 
       {/* Hero Section with Swiper */}
-      <section className="h-[65vh]  flex items-center justify-center bg-[#000000] relative">
+      <section className="h-[65vh]  flex items-center justify-center bg-[#050e3b] relative">
         <Swiper
           effect="coverflow"
           grabCursor
@@ -112,7 +112,7 @@ const Navbar = () => {
           {images.map((src, idx) => (
             <SwiperSlide key={idx} className="relative w-[85vw] max-w-4xl h-[75vh] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500">
               <Image src={src} alt={`Slide ${idx + 1}`} layout="fill" objectFit="cover" className="swiper-slide-image absolute inset-0 w-full h-full object-cover transition-all duration-500" />
-              <div className="w-full h-full absolute flex flex-col items-center justify-center bg-opacity-50 bg-[#00000077] text-white z-10 text-center">
+              <div className="w-full h-full absolute flex flex-col items-center justify-center bg-opacity-50 bg-[#050e3b] text-white z-10 text-center">
                 <h2 className="text-2xl md:text-3xl font-bold">{slideContent[idx].title}</h2>
                 <p className="text-sm md:text-lg opacity-90">{slideContent[idx].subtitle}</p>
               </div>
@@ -131,7 +131,7 @@ const Navbar = () => {
             {/* Add priority to the Image component */}
             <Image className='w-[50px] object-cover' src={logo} alt="Logo" priority width={100} height={100} />
             <div className='text-3xl text-white'>
-              Fortune
+              FORTUNE
             </div>
           </Link>
 
@@ -167,9 +167,8 @@ const Navbar = () => {
           </div>
         )}
       </div>
-
       {/* Hero Section with Swiper */}
-      <section className="h-[40vh] w-[90vw] mx-5 mt-4 flex items-center justify-center bg-[#000000] relative">
+      <section className="h-[40vh] w-[90vw] mx-5 mt-4 flex items-center justify-center bg-[#050e3b] relative">
         <Swiper
           effect="coverflow"
           grabCursor
@@ -189,14 +188,14 @@ const Navbar = () => {
           }}
           pagination={{ clickable: true }}
           modules={[Autoplay, Pagination, EffectCoverflow]}
-          className="w-full h-full"
+          className="w-full h-full bg-[#050e3b]"
         >
           {images.map((src, idx) => (
-            <SwiperSlide key={idx} className="relative w-[85vw] max-w-4xl h-[75vh] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500">
+            <SwiperSlide key={idx} className="relative w-[85vw] max-w-4xl bg-[#050e3b] h-[75vh] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500">
               <Image src={src} alt={`Slide ${idx + 1}`} layout="fill" objectFit="cover" className="swiper-slide-image absolute inset-0 w-full h-full object-cover transition-all duration-500" />
-              <div className="w-full h-full absolute flex flex-col items-center justify-center bg-opacity-50 bg-[#00000077] text-white z-10 text-center">
-                <h2 className="text-2xl md:text-3xl font-bold">{slideContent[idx].title}</h2>
-                <p className="text-sm md:text-lg opacity-90">{slideContent[idx].subtitle}</p>
+              <div className="w-full h-full absolute flex flex-col items-center justify-center bg-opacity-50 bg-[#050e3b] text-white z-10 text-center">
+                <h2 className="text-2xl md:text-3xl bg-[#050e3b] font-bold">{slideContent[idx].title}</h2>
+                <p className="text-sm md:text-lg bg-[#050e3b] opacity-90">{slideContent[idx].subtitle}</p>
               </div>
             </SwiperSlide>
           ))}

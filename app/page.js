@@ -13,9 +13,12 @@ import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [showBox, setShowBox] = useState(true);
+
     const [menuOpen, setMenuOpen] = useState(false); // For mobile menu toggle
     const scrollToSection = (id) => {
       const section = document.getElementById(id);
@@ -26,10 +29,8 @@ export default function Home() {
       setMenuOpen(false); 
     };
     const images = [
-      '/classroom/classroom1.jpg',
       '/classroom/classroom2.jpg',
       '/classroom/classroom3.jpg',
-      '/classroom/classroom4.jpg',
       '/classroom/classroom5.jpg',
       '/classroom/classroom6.jpg',
     ];
@@ -46,30 +47,34 @@ export default function Home() {
     { id: 3, name: 'ADD ON', path: 'addon'},
     { id: 4, name: 'CONTACT', path: 'contact'},
   ];
-  
+
     const slideContent = [
-      { title: 'Empower with Education', subtitle: 'Hands-on training with real tools' },
       { title: 'Inspire Young Minds', subtitle: 'Uplift the next generation of digital learners' },
       { title: 'Shape Your Career', subtitle: 'Get skilled. Get certified. Get hired.' },
-      { title: 'Learn by Doing', subtitle: 'Workshops, Labs, Projects, Guidance' },
       { title: 'Digital Literacy for All', subtitle: 'From beginners to pros — we teach them all' },
-      { title: 'Build Your Future with Fortune', subtitle: '15+ Years of Excellence in Computer Education' },
+      { title: 'Excellence from Since 15 Years', subtitle: '15+ Years of Excellence in Computer Education' },
     ];
   return (
-    <main className="bg-black relative text-white">
+    <main className="bg-[#101129] relative text-white">
 
-       <header className='h-[480px] bg-black  hidden md:block '>
+       <header className='h-[480px] bg-[#101129]  hidden md:block '>
       {/* Navbar */}
       <div className={`sm:right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm shadow-md`}>
         <nav className='flex items-center justify-between p-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
 
-          <Link href="/" className='flex items-center justify-between w-[10%] ml-2 gap-1 font-bold text-[#fff]'>
-            {/* Add priority to the Image component */}
-            <Image className='w-[50px] object-cover' src={logo} alt="Logo" priority width={100} height={100} />
-            <div className='text-3xl text-white'>
-              Fortune
-            </div>
-          </Link>
+          <Link
+  href="/"
+  className="flex items-center justify-between w-[15%] h-[70%] ml-2  font-bold text-[#fff]"
+>
+  <Image
+    className="object-contain w-full h-[90%]"
+    src={logo}
+    alt="Logo"
+    priority
+    width={90}
+    height={90}
+  />
+</Link>
 
           {/* Mobile Hamburger Menu */}
           <div className="sm:hidden flex items-center gap-5">
@@ -92,9 +97,8 @@ export default function Home() {
           </div>
         </nav>
       </div>
-
       {/* Hero Section with Swiper */}
-      <section className="h-[65vh] mt-20  flex items-center justify-center bg-[#000000] relative">
+      <section className="h-[65vh] mt-20  flex items-center justify-center bg-[#101129] relative">
         <Swiper
           effect="coverflow"
           grabCursor
@@ -129,18 +133,24 @@ export default function Home() {
       </section>
     </header>
     {/*This is for phone*/}
-    <header className='h-full bg-black md:hidden block '>
+    <header className='h-full bg-[#101129] md:hidden block '>
       {/* Navbar */}
       <div className={`right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm shadow-md`}>
         <nav className='flex items-center justify-between p-2 pr-7 w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
 
-          <Link href="/" className='flex items-center justify-between w-[10%] ml-2 gap-1 font-bold text-[#fff]'>
-            {/* Add priority to the Image component */}
-            <Image className='w-[50px] object-cover' src={logo} alt="Logo" priority width={100} height={100} />
-            <div className='text-3xl text-white'>
-              Fortune
-            </div>
-          </Link>
+          <Link
+  href="/"
+  className="flex items-center justify-between w-[45%] h-[100%] ml-2  font-bold text-[#fff]"
+>
+  <Image
+    className="object-contain w-full h-[90%]"
+    src={logo}
+    alt="Logo"
+    priority
+    width={200}
+    height={200}
+  />
+</Link>
 
           {/* Mobile Hamburger Menu */}
           <div className="sm:hidden flex items-center gap-5">
@@ -152,7 +162,7 @@ export default function Home() {
 
         {/* Mobile Menu (visible only for small and medium screens) */}
         {menuOpen && (
-          <div className="sm:hidden flex flex-col items-center z-50 bg-black p-4 absolute top-16 left-0 w-full">
+          <div className="sm:hidden flex flex-col items-center z-50 bg-[#101129] p-4 absolute top-16 left-0 w-full">
             {link.map((item, index) => (
               <button onClick={() =>scrollToSection(item.path)} key={index} className="py-2 text-white text-lg">
                 {item.name}
@@ -163,7 +173,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section with Swiper */}
-      <section className="h-[40vh] w-[90vw] mx-5 mt-15 flex items-center justify-center bg-[#000000] relative">
+      <section className="h-[40vh] w-[90vw] mx-5 mt-15 flex items-center justify-center bg-[#101129] relative">
         <Swiper
           effect="coverflow"
           grabCursor
@@ -197,6 +207,24 @@ export default function Home() {
         </Swiper>
       </section>
     </header>
+
+{showBox && (
+  <div className="course-offer-box">
+    <button className="close-button " onClick={() => setShowBox(false)}>×</button>
+    <h4 className="offer-title">We Are Offering:</h4>
+    <ul className="offer-list">
+      <li>Tally, Advance Excel, SAP, Python, JAVA</li>
+      <li>Data Structure, Data Analytics</li>
+      <li>Web Development, Web Designing</li>
+      <li>Graphic Designing</li>
+      <li>Tuition for BCA, MCA, Engineering (CSE)</li>
+      <li>1st to 10th All Subjects</li>
+      <li>Accounts, Statistics, Maths</li>
+      <li>DCA, PGDCA, Spoken English</li>
+      <li>Placement Assistance</li>
+    </ul>
+  </div>
+)}
 
       <About />
       
