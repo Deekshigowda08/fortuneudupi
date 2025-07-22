@@ -472,13 +472,19 @@ const DiplomaCourses = () => {
       <div className={`sm:right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm hidden md:block shadow-md`}>
         <nav className='flex items-center justify-between p-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
 
-          <Link href="/" className='flex items-center justify-between w-[10%] ml-2 gap-1 font-bold text-[#fff]'>
-            {/* Add priority to the Image component */}
-            <Image className='w-[50px] object-cover' src={logo} alt="Logo" priority width={100} height={100} />
-            <div className='text-3xl text-white'>
-              FORTUNE
-            </div>
-          </Link>
+          <Link
+  href="/"
+  className="flex items-center justify-between w-[15%] h-[70%] ml-2  font-bold text-[#fff]"
+>
+  <Image
+    className="object-contain w-full h-[90%]"
+    src={logo}
+    alt="Logo"
+    priority
+    width={90}
+    height={90}
+  />
+</Link>
 
           {/* Desktop Links (by default visible on larger screens) */}
           <div className={"gap-10 text-[#ffffff] z-50 flex"}>
@@ -499,13 +505,19 @@ const DiplomaCourses = () => {
       <div className={`right-0 z-50 p-7 fixed top-0 left-0 block md:hidden bg-[#00000050] backdrop-blur-sm shadow-md`}>
         <nav className='flex items-center justify-between p-2 pr-7 w-full absolute top-0 left-0 z-40  bg-[#00000000]'>
 
-          <Link href="/" className='flex items-center justify-between w-[10%] ml-2 gap-1 font-bold text-[#fff]'>
-            {/* Add priority to the Image component */}
-            <Image className='w-[50px] object-cover' src={logo} alt="Logo" priority width={100} height={100} />
-            <div className='text-3xl text-white'>
-              FORTUNE
-            </div>
-          </Link>
+          <Link
+  href="/"
+  className="flex items-center justify-between w-[45%] h-[100%] ml-2  font-bold text-[#fff]"
+>
+  <Image
+    className="object-contain w-full h-[90%]"
+    src={logo}
+    alt="Logo"
+    priority
+    width={200}
+    height={200}
+  />
+</Link>
 
           {/* Mobile Hamburger Menu */}
           <div className="sm:hidden flex items-center gap-5">
