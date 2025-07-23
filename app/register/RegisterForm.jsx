@@ -3,6 +3,8 @@ import { useSearchParams } from "next/navigation";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+export const dynamic = 'force-dynamic'
+
 export default function RegisterForm() {
   const searchParams = useSearchParams();
   const course = searchParams.get("course");
