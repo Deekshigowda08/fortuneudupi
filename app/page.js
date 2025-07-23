@@ -64,7 +64,7 @@ export default function Home() {
 
           <Link
   href="/"
-  className="flex items-center justify-between w-[15%] h-[70%] ml-2  font-bold text-[#fff]"
+  className="flex items-center justify-between w-[25%] h-[70%] ml-2  font-bold text-[#fff]"
 >
   <Image
     className="object-contain w-full h-[90%]"
@@ -140,7 +140,7 @@ export default function Home() {
 
           <Link
   href="/"
-  className="flex items-center justify-between w-[45%] h-[100%] ml-2  font-bold text-[#fff]"
+  className="flex items-center justify-between w-[85%] h-[100%] ml-2  font-bold text-[#fff]"
 >
   <Image
     className="object-contain w-full h-[90%]"
