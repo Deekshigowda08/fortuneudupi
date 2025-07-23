@@ -3,7 +3,7 @@ import React from "react";
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
-import { useState } from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from "next/navigation";
 
 const coursesData = [
@@ -468,6 +468,7 @@ const DiplomaCourses = () => {
   const para = searchParams.get("course");
   if (!para) return null; // or a loading spinner
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="min-h-screen bg-gray-50 py-10 px-5">
       {/* Navbar */}
       <div className={`sm:right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm hidden md:block shadow-md`}>
@@ -545,6 +546,7 @@ const DiplomaCourses = () => {
 
       </div>
     </div>
+    </Suspense>
   );
 };
 

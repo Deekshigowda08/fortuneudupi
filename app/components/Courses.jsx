@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCube, EffectCoverflow, EffectFade } from 'swiper/modules';
 import Image from 'next/image';
+import React, { Suspense } from 'react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/effect-coverflow';

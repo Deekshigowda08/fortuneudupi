@@ -8,7 +8,7 @@ import 'swiper/css/effect-cube';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-fade';
 import Link from 'next/link';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 export default function CourseBox({ image, title, link, description, id }) {
   return (
