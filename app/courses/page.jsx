@@ -466,6 +466,7 @@ const DiplomaCourses = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const searchParams = useSearchParams();
   const para = searchParams.get("course");
+  if (!para) return null; // or a loading spinner
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-5">
       {/* Navbar */}
