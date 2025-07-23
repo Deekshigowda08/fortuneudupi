@@ -1,6 +1,6 @@
 "use client"
 import {React,Suspense} from "react";
-import DiplomaCourses from "/course.jsx"
+import DiplomaCourses from './course';
 
 const Diploma = () => {
   return (
