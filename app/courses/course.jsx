@@ -299,4 +299,255 @@ const coursesData = [
   },
   {
     title: "CORELRDRAW",
-    image: "https://source.unsplash.com/400
+    image: "https://source.unsplash.com/400x300/?coreldraw,vector",
+    highlights: ["Vector Design", "Illustrations", "Posters"],
+    description: "Design logos, posters, and vector graphics using CorelDRAW effectively.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "INDESIGN",
+    image: "https://source.unsplash.com/400x300/?indesign,layout",
+    highlights: ["Page Layout", "Publishing", "Magazines"],
+    description: "Learn Adobe InDesign for layout design of brochures, magazines, and digital publications.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "ILLUSTRATOR",
+    image: "https://source.unsplash.com/400x300/?illustrator,design",
+    highlights: ["Illustrations", "Logo Design", "Vector Art"],
+    description: "Use Adobe Illustrator to create professional vector artwork and branding designs.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "JAVA",
+    image: "https://source.unsplash.com/400x300/?java,coding",
+    highlights: ["OOP", "Cross-platform", "Enterprise Apps"],
+    description: "Learn Java programming from basics to advanced, including OOP and application development.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "PYTHON",
+    image: "https://source.unsplash.com/400x300/?python,coding",
+    highlights: ["Scripting", "Data Analysis", "Automation"],
+    description: "Master Python programming for automation, data analysis, and backend development.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "JAVASCRIPT",
+    image: "https://source.unsplash.com/400x300/?javascript,web",
+    highlights: ["Frontend", "Web Apps", "Interactivity"],
+    description: "Understand JavaScript to build interactive and dynamic websites and applications.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "VB SCRIPT",
+    image: "https://source.unsplash.com/400x300/?vbscript,scripting",
+    highlights: ["Automation", "Scripting", "Microsoft Environment"],
+    description: "Learn VB Script for automation tasks within Microsoft environments and custom scripting.",
+    type: "IndividualCourse",
+    duration: "N/A"
+  },
+  {
+    title: "Tuition Classes",
+    image: "https://source.unsplash.com/400x300/?tuition,education",
+    highlights: ["Personalized Attention", "Subject Coverage", "Academic Excellence"],
+    description: "We offer tuition classes for students from 1st to 12th, covering a wide range of subjects with personalized attention and guidance to help in excel academically.",
+    type: "tuition",
+    duration: "N/A"
+  }
+
+  //inu 3 +
+];
+ const links = [
+    { id: 1, name: 'COURSES', path: 'course'},
+    { id: 2, name: 'FACULTY', path: 'faculty'},
+    { id: 3, name: 'ADD ON', path: 'addon'},
+    { id: 4, name: 'CONTACT', path: 'contact'},
+  ];
+   const link = [
+    { id: 1, name: 'COURSES', path: 'course'},
+    { id: 2, name: 'FACULTY', path: 'faculties'},
+    { id: 3, name: 'ADD ON', path: 'addon'},
+    { id: 4, name: 'CONTACT', path: 'contact'},
+  ];
+  
+
+
+const CourseCard = ({ course }) => {
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '' });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "your_service_id",      // Replace with your EmailJS service ID
+        "your_template_id",     // Replace with your EmailJS template ID
+        form.current,
+        "your_user_public_key"  // Replace with your EmailJS public key
+      )
+      .then(
+        (error) => console.error("FAILED...", error.text)
+      );
+    setShowForm(false);
+  };
+  return (
+    <div className="bg-[#101129] rounded-xl overflow-hidden shadow-lg max-w-xs mx-auto relative">
+      <div className="p-4 text-white">
+        <h2 className="text-lg text-center font-bold mb-2">{course.title}</h2>
+        <h5 className="text-sm text-left text-green-600 font-bold mb-2">Duration: {course.duration}</h5>
+        <div className="flex flex-wrap gap-2 mb-3">
+          {course.highlights.map((item, index) => (
+            <span
+              key={index}
+              className="bg-white text-black text-xs font-semibold px-2 py-1 rounded-full"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <p className="text-sm mb-4">{course.description}</p>
+        <button
+          onClick={() => setShowForm(true)}
+          className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-full"
+        >
+          Reach out →
+        </button>
+      </div>
+
+      {showForm && (
+      <div className="reachout-form-container">
+  <h3 className="reachout-title">Reach Out</h3>
+  <form onSubmit={handleSubmit} className="reachout-form">
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Your Name"
+      required
+      className="reachout-input "
+    />
+    <input
+      type="tel"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="Phone Number"
+      required
+      className="reachout-input"
+    />
+    <div className="reachout-actions">
+      <button type="submit" className="reachout-submit">Submit</button>
+      <button type="button" className="reachout-cancel" onClick={() => setShowForm(false)}>Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+      )}
+    </div>
+  );
+};
+
+const DiplomaCourses = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const para = searchParams.get("course");
+  if (!para) return null; // or a loading spinner
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+    <div className="min-h-screen bg-gray-50 py-10 px-5">
+      {/* Navbar */}
+      <div className={`sm:right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm hidden md:block shadow-md`}>
+        <nav className='flex items-center justify-between p-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
+
+          <Link
+  href="/"
+  className="flex items-center justify-between w-[15%] h-[70%] ml-2  font-bold text-[#fff]"
+>
+  <Image
+    className="object-contain w-full h-[90%]"
+    src={logo}
+    alt="Logo"
+    priority
+    width={90}
+    height={90}
+  />
+</Link>
+
+          {/* Desktop Links (by default visible on larger screens) */}
+          <div className={"gap-10 text-[#ffffff] z-50 flex"}>
+            {links.map((item, index) => (
+              <button onClick={() =>{window.location.assign("/")}} key={index}>
+                <div className='flex flex-col'>
+                  <span className='relative font-semibold underline text-[18px]'>
+                    {item.name}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </nav>
+      </div>
+    {/*This is for phone*/}
+      {/* Navbar */}
+      <div className={`right-0 z-50 p-7 fixed top-0 left-0 block md:hidden bg-[#00000050] backdrop-blur-sm shadow-md`}>
+        <nav className='flex items-center justify-between p-2 pr-7 w-full absolute top-0 left-0 z-40  bg-[#00000000]'>
+
+          <Link
+  href="/"
+  className="flex items-center justify-between w-[45%] h-[100%] ml-2  font-bold text-[#fff]"
+>
+  <Image
+    className="object-contain w-full h-[90%]"
+    src={logo}
+    alt="Logo"
+    priority
+    width={200}
+    height={200}
+  />
+</Link>
+
+          {/* Mobile Hamburger Menu */}
+          <div className="sm:hidden flex items-center gap-5">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-white">
+              <span className="text-3xl">&#9776;</span> {/* Hamburger Icon */}
+            </button>
+          </div>
+        </nav>
+        {menuOpen && (
+          <div className="sm:hidden flex flex-col items-center z-50 bg-[#101129] p-4 absolute top-16 left-0 w-full">
+            {link.map((item, index) => (
+              <button onClick={() =>{window.location.assign("/")}} key={index} className="py-2 text-white text-lg">
+                {item.name}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <h1 className="text-3xl font-bold text-center my-10">{para === "Diploma" ? "Diploma Courses" : para === "Professional" ? "Post Graduate Courses" : para === "Certificate" ? "Certification Courses" : para === "IndividualCourse" ? "Individual Courses" : para === "tuition" ? "Tuition Classes" : para === "BasicCourse" ? "Basic Computer Application" : "Other Courses"}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {coursesData.filter(course => course.type === para).map((course, idx) => (
+  <CourseCard key={idx} course={course} />
+))}
+
+      </div>
+    </div>
+    </Suspense>
+  );
+};
+
+export default DiplomaCourses;
