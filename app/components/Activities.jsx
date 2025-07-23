@@ -9,14 +9,14 @@ const activities = [
   },
   {
     id: "02",
-    title: "DOUBT CLEARANCE SELECTIONS",
-    subtitle: "Fortune Computer Classes provides dedicated doubt clearance sessions, ensuring personalized attention for every student. Our expert instructors guide you through challenging concepts, enhancing understanding and boosting confidence for successful course completion.",
+    title: "AFFILIATED WITH VTU",
+    subtitle: "At Fortune Computer Classes, <strong>we’re proud to support students affiliated with Visvesvaraya Technological University (VTU)</strong>. Our dedicated doubt clearance sessions ensure personalized guidance, helping VTU learners tackle challenging concepts with confidence. Led by expert instructors, our approach enhances understanding and fosters academic success—making your journey through VTU smoother and more rewarding.",
     image: "/activities/act2.jpg",
   },
   {
     id: "03",
-    title: "WE PROVIDE CSC CERTIFICATE",
-    subtitle: "Fortune Computer Classes provides comprehensive, value-based education with a focus on technical skills, ethics, and problem-solving. Upon successful completion, students receive a certificate from the CSC Education and Training Academy, recognized for its quality and credibility.",
+    title: "WE PROVIDE CSC GOVERNMENT CERTIFICATE",
+    subtitle: "Fortune Computer Classes provides comprehensive, value-based education with a focus on technical skills, ethics, and problem-solving. Upon successful completion, <strong>students receive a certificate from the CSC Education and Training Academy approved by government</strong>, recognized for its quality and credibility.",
     image: "/activities/act3.jpg",
   },
 ];
@@ -30,24 +30,27 @@ const Activities = (id) => {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {activities.map((item, idx) => (
-          <div key={idx} className="flex flex-col gap-4">
-            <span className="text-4xl font-bold text-gray-300">{item.id}</span>
-            <div className="w-full h-[180px] relative overflow-hidden rounded-md">
-              <Image
-                src={item.image}
-                alt={item.title}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <h3 className="text-indigo-700 font-bold text-sm tracking-widest uppercase">
-              {item.title}
-            </h3>
-            <p className="text-sm text-gray-700">{item.subtitle}</p>
-          </div>
-        ))}
+  {activities.map((item, idx) => (
+    <div key={idx} className="flex flex-col gap-4">
+      <span className="text-4xl font-bold text-gray-300">{item.id}</span>
+      <div className="w-full h-[180px] relative overflow-hidden rounded-md">
+        <Image
+          src={item.image}
+          alt={item.title}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
+      <h3 className="text-indigo-700 font-bold text-sm tracking-widest uppercase">
+        {item.title}
+      </h3>
+      <p
+        className="text-sm text-gray-700"
+        dangerouslySetInnerHTML={{ __html: item.subtitle }}
+      />
+    </div>
+  ))}
+</div>
     </section>
   );
 }

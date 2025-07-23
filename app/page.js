@@ -213,7 +213,9 @@ export default function Home() {
     <button className="close-button " onClick={() => setShowBox(false)}>×</button>
     <h4 className="offer-title">We Are Offering:</h4>
     <ul className="offer-list">
-      <li>Tally, Advance Excel, SAP, Python, JAVA</li>
+      <li>Tally, Advance Excel</li>
+      <li>SAP</li>
+      <li>Python, JAVA</li>
       <li>Data Structure, Data Analytics</li>
       <li>Web Development, Web Designing</li>
       <li>Graphic Designing</li>
