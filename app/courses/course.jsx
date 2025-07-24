@@ -406,8 +406,8 @@ const CourseCard = ({ course }) => {
     setShowForm(false);
   };
   return (
-    <div className="bg-[#101129] rounded-xl overflow-hidden shadow-lg max-w-xs mx-auto relative">
-      <div className="p-4 text-white">
+    <div className="bg-[#101129] rounded-xl flex flex-col justify-around min-h-[300px] overflow-hidden shadow-lg max-w-xs mx-auto relative">
+      <div className="p-4 py-auto text-white">
         <h2 className="text-lg text-center font-bold mb-2">{course.title}</h2>
         <h5 className="text-sm text-left text-green-600 font-bold mb-2">Duration: {course.duration}</h5>
         <div className="flex flex-wrap gap-2 mb-3">
