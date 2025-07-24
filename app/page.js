@@ -13,7 +13,6 @@ import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import emailjs from "@emailjs/browser";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,20 +59,28 @@ export default function Home() {
        <header className='h-[480px] bg-[#101129]  hidden md:block '>
       {/* Navbar */}
       <div className={`sm:right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm shadow-md`}>
-        <nav className='flex items-center justify-between p-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
+        <nav className='flex items-center justify-between px-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
 
-          <Link
+        <Link
   href="/"
-  className="flex items-center justify-between w-[25%] h-[70%] ml-2  font-bold text-[#fff]"
+  className="flex items-center  ml-2 font-bold text-white"
 >
   <Image
-    className="object-contain w-full h-[90%]"
     src={logo}
     alt="Logo"
     priority
-    width={90}
-    height={90}
+    width={52}
+    height={52}
+    className="object-contain"
   />
+  <div className="flex flex-col w-full leading-tight">
+    <span className="text-xl font-serif font-extrabold">
+      FORTUNE INSTITUTE OF COMPUTER EDUCATION
+    </span>
+    <span className="text-xs opacity-80">
+      BUILD YOUR DIGITAL FUTURE WITH FORTUNE....
+    </span>
+  </div>
 </Link>
 
           {/* Mobile Hamburger Menu */}
@@ -106,7 +113,7 @@ export default function Home() {
           slidesPerView="auto"
           loop
           autoplay={{
-            delay: 3000,
+            delay: 6000,
             disableOnInteraction: false,
           }}
           coverflowEffect={{
@@ -136,20 +143,28 @@ export default function Home() {
     <header className='h-full bg-[#101129] md:hidden block '>
       {/* Navbar */}
       <div className={`right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm shadow-md`}>
-        <nav className='flex items-center justify-between p-2 pr-7 w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
+        <nav className='flex items-center justify-between px-2 pr-7 w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
 
-          <Link
+        <Link
   href="/"
-  className="flex items-center justify-between w-[85%] h-[100%] ml-2  font-bold text-[#fff]"
+  className="flex items-center  ml-2 font-bold text-white"
 >
   <Image
-    className="object-contain w-full h-[90%]"
     src={logo}
     alt="Logo"
     priority
-    width={200}
-    height={200}
+    width={52}
+    height={52}
+    className="object-contain"
   />
+  <div className="flex flex-col w-full leading-tight">
+    <span className="text-[11px] font-serif font-extrabold">
+      FORTUNE INSTITUTE OF COMPUTER EDUCATION
+    </span>
+    <span className="text-[8px] opacity-80">
+      BUILD YOUR DIGITAL FUTURE WITH FORTUNE....
+    </span>
+  </div>
 </Link>
 
           {/* Mobile Hamburger Menu */}
@@ -181,7 +196,7 @@ export default function Home() {
           slidesPerView="auto"
           loop
           autoplay={{
-            delay: 3000,
+            delay: 6000,
             disableOnInteraction: false,
           }}
           coverflowEffect={{

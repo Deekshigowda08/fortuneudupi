@@ -7,6 +7,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
 import { useSearchParams } from "next/navigation";
+import { ToastContainer, toast } from 'react-toastify';
+import emailjs from "@emailjs/browser";
 
 const coursesData = [
   {
@@ -389,24 +391,26 @@ const CourseCard = ({ course }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    e.preventDefault();
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "your_service_id",      // Replace with your EmailJS service ID
-        "your_template_id",     // Replace with your EmailJS template ID
-        form.current,
-        "your_user_public_key"  // Replace with your EmailJS public key
-      )
-      .then(
-        (error) => console.error("FAILED...", error.text)
-      );
-    setShowForm(false);
-  };
+  emailjs.sendForm(
+    "service_x60lk15",      // Your EmailJS service ID
+    "template_h9z8f3t",     // Your EmailJS template ID
+    e.target,               // ✅ This is the actual form element
+    "Tgc1a5b4bTe2c9nnp"     // Your EmailJS public key
+  )
+  .then(
+    () => {
+      toast("Email sent successfully!", { type: "success" });
+      setShowForm(false);
+    },
+    (error) => console.error("FAILED...", error.text)
+  );
+};
   return (
     <div className="bg-[#101129] rounded-xl flex flex-col justify-around min-h-[300px] overflow-hidden shadow-lg max-w-xs mx-auto relative">
+      <ToastContainer />
       <div className="p-4 py-auto text-white">
         <h2 className="text-lg text-center font-bold mb-2">{course.title}</h2>
         <h5 className="text-sm text-left text-green-600 font-bold mb-2">Duration: {course.duration}</h5>
@@ -473,20 +477,27 @@ const DiplomaCourses = () => {
     <div className="min-h-screen bg-gray-50 py-10 px-5">
       {/* Navbar */}
       <div className={`sm:right-0 z-50 p-7 fixed top-0 left-0 bg-[#00000050] backdrop-blur-sm hidden md:block shadow-md`}>
-        <nav className='flex items-center justify-between p-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
-
-          <Link
+        <nav className='flex items-center justify-between px-2 pr-7 sm:w-full absolute top-0 left-0 z-50 bg-[#00000000]'>
+<Link
   href="/"
-  className="flex items-center justify-between w-[25%] h-[70%] ml-2  font-bold text-[#fff]"
+  className="flex items-center  ml-2 font-bold text-white"
 >
   <Image
-    className="object-contain w-full h-[90%]"
     src={logo}
     alt="Logo"
     priority
-    width={90}
-    height={90}
+    width={52}
+    height={52}
+    className="object-contain"
   />
+  <div className="flex flex-col w-full leading-tight">
+    <span className="text-xl font-serif font-extrabold">
+      FORTUNE INSTITUTE OF COMPUTER EDUCATION
+    </span>
+    <span className="text-xs opacity-80">
+      BUILD YOUR DIGITAL FUTURE WITH FORTUNE....
+    </span>
+  </div>
 </Link>
 
           {/* Desktop Links (by default visible on larger screens) */}
@@ -506,21 +517,30 @@ const DiplomaCourses = () => {
     {/*This is for phone*/}
       {/* Navbar */}
       <div className={`right-0 z-50 p-7 fixed top-0 left-0 block md:hidden bg-[#00000050] backdrop-blur-sm shadow-md`}>
-        <nav className='flex items-center justify-between p-2 pr-7 w-full absolute top-0 left-0 z-40  bg-[#00000000]'>
+        <nav className='flex items-center justify-between px-2 pr-7 w-full absolute top-0 left-0 z-40  bg-[#00000000]'>
 
-          <Link
+        <Link
   href="/"
-  className="flex items-center justify-between w-[85%] h-[100%] ml-2  font-bold text-[#fff]"
+  className="flex items-center  ml-2 font-bold text-white"
 >
   <Image
-    className="object-contain w-full h-[90%]"
     src={logo}
     alt="Logo"
     priority
-    width={200}
-    height={200}
+    width={52}
+    height={52}
+    className="object-contain"
   />
-</Link>
+  <div className="flex flex-col w-full leading-tight">
+    <span className="text-[11px] font-serif font-extrabold">
+      FORTUNE INSTITUTE OF COMPUTER EDUCATION
+    </span>
+    <span className="text-[8px] opacity-80">
+      BUILD YOUR DIGITAL FUTURE WITH FORTUNE....
+    </span>
+  </div>
+</Link> 
+
 
           {/* Mobile Hamburger Menu */}
           <div className="sm:hidden flex items-center gap-5">

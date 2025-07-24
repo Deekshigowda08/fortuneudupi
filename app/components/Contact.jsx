@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
@@ -13,14 +14,14 @@ const Contact = () => {
     const [message, setMessage] = useState("");
 
     async function sendEmail(formData) {
-        const serviceId = "service_3u9meos";
-        const templateId = "template_xr75hbg";
-        const userId = "RB2SELaSlhZIBBaI9";
+        const serviceId = "service_x60lk15";
+        const templateId = "template_a2ws7ad";
+        const userId = "Tgc1a5b4bTe2c9nnp";
 
         emailjs
             .send(serviceId, templateId, formData, userId)
             .then((response) => {
-                console.log("Email sent successfully!", response.status, response.text);
+                toast("Email sent successfully!", { type: "success" });
 
                 // Reset fields
                 setEmail("");
@@ -41,6 +42,7 @@ const Contact = () => {
     return (
         <section id="contact" className="bg-[#101129] text-white mt-20 flex flex-col gap-5">
             <h3 className="text-3xl sm:text-4xl font-bold text-center">Contact Us</h3>
+            <ToastContainer />
 
             {/* Contact Form */}
             <div className="sm:w-[600px] sm:mx-auto mx-5 bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-12 shadow-lg border border-white/10">
@@ -94,11 +96,6 @@ const Contact = () => {
                     >
                         Send Message
                     </button>
-
-                    {/* Status */}
-                    {status && (
-                        <p className="text-sm text-center text-gray-300">{status}</p>
-                    )}
                 </form>
             </div>
 

@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCube, EffectCoverflow, EffectFade } from 'swiper/modules';
 import Image from 'next/image';
-import React, { Suspense } from 'react';
+import React from 'react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/effect-coverflow';
@@ -19,7 +19,7 @@ const Courses = () => {
  <CourseBox image='/courses/deploma.png' title="DIPLOMA COURSES" link="/courses?course=Diploma" description="This course is designed for individuals seeking comprehensive expertise in the digital domain.We offer diploma programs across various fields." id={2} />
  <CourseBox image='/courses/pgc.png' title="post graduate course" link="/courses?course=Professional" description="We offer PG in Diploma in Computer Applications,IT, and Commercial Applications, which include modules in C, C++, Java, and presentation skills." id={3} /> 
  <CourseBox image='/courses/certi.png' title="certification course" link="/courses?course=Certificate" description="We offer certification courses in E-Office Management, E-Finance,Communication English and designed to enhance digital proficiency." id={4} />
- <CourseBox image='/courses/tution.png' title="tution classes" link="/courses?course=tuition" description="We offer tuition classes for students from 1st to 12th, covering a wide range of subjects with personalized attention and guidance to help in excel academically." id={5} />
+ <CourseBox image='/courses/tution.png' title="tuition classes" link="/courses?course=tuition" description="We offer tuition classes for students from 1st to 12th, covering a wide range of subjects with personalized attention and guidance to help in excel academically." id={5} />
  <CourseBox image='/courses/english.png' title="spoken english courses" link="/courses?course=SoftSkill" description="We offer Spoken English courses to improve fluency, pronunciation, confidence, and everyday communication skills" id={6} />  
  <CourseBox image='/courses/demanded.png' title="demanded technologies" link="/courses?course=IndividualCourse" description="We offer in-demand technology courses including SAP, Artificial Intelligence & Machine Learning, and Data Science" id={7} />      
 
