@@ -413,7 +413,6 @@ const CourseCard = ({ course }) => {
       <ToastContainer />
       <div className="p-4 py-auto text-white">
         <h2 className="text-lg text-center font-bold mb-2">{course.title}</h2>
-        <h5 className="text-sm text-left text-green-600 font-bold mb-2">Duration: {course.duration}</h5>
         <div className="flex flex-wrap gap-2 mb-3">
           {course.highlights.map((item, index) => (
             <span
