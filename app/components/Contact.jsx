@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import { MdEmail } from "react-icons/md";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const formRef = useRef();
@@ -147,7 +148,7 @@ const Contact = () => {
           <a href="tel:+918618638126" className="hover:underline text-white text-sm font-bold">+91-8618638126</a>
         </p>
         <p>
-          <MdEmail className="inline-block mr-2 text-md px-1 text-red-400" />
+          <MdEmail className="inline-block mr-2   text-red-400" />
           <a href="mailto:ficeudupi@gmail.com" className="hover:underline text-white text-sm font-bold">ficeudupi@gmail.com</a> /{" "}
           <a href="mailto:fortuneclassesin@gmail.com" className="hover:underline text-white text-sm font-bold">fortuneclassesin@gmail.com</a>
         </p>

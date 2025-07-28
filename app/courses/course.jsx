@@ -9,20 +9,21 @@ import logo from '@/public/logo.png';
 import { useSearchParams } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import emailjs from "@emailjs/browser";
+import 'react-toastify/dist/ReactToastify.css';
 
 const coursesData = [
   {
     title: "Diploma in Computer Applications (DCA)",
     image: "https://source.unsplash.com/400x300/?computer,office",
-    highlights: ["Basic of IT","Windows","MS Office","Word","Power Pount","Excel","Acess","HTML", "Web Technology", "Tally Prime", "Printing","Presentation"],
-    description: "We provide training and support in essential Information Technology areas, including Windows, Microsoft Office applications such as Word, PowerPoint, Excel, and Access; web technologies like HTML; accounting software Tally Prime; printing processes; presentation techniques; and overall computer fundamentals.",
+    highlights: ["Basic of IT","Windows","MS Office","Word","Power Point","Excel","Acess","HTML", "Web Technology", "Tally Prime", "Printing","Presentation"],
+    description: "We provide training and support in essential Information Technology areas, including Windows, Microsoft Office applications such as Word, PowerPoint, Excel, and Access. Web technologies like HTML, accounting software Tally Prime, printing processes, presentation techniques, and overall computer fundamentals.",
     type: "Diploma",
     duration: "6 Months"
   },
   {
     title: "Diploma in Information Technology (DIT)",
     image: "https://source.unsplash.com/400x300/?technology,education",
-    highlights: ["Basic of IT","Windows","MS Office","Word","Power Pount","Excel","Acess","HTML", "Web Technology", "Tally Prime", "Printing","Adobe Photoshop","Presentation"],
+    highlights: ["Basic of IT","Windows","MS Office","Word","Power Point","Excel","Acess","HTML", "Web Technology", "Tally Prime", "Printing","Adobe Photoshop","Presentation"],
     description: "We provide comprehensive training in foundational and advanced Information Technology topics, including computer basics, Windows operating system, Microsoft Office tools such as Word, PowerPoint, Excel, and Access, web technologies like HTML and website development, Tally Prime for accounting, printing techniques, Adobe Photoshop for graphic design, and effective presentation skills",
     type: "Diploma",
     duration: "6 Months"
@@ -30,7 +31,7 @@ const coursesData = [
   {
     title: "Diploma in Commercial Applications (DCOM)",
     image: "https://source.unsplash.com/400x300/?business,technology",
-    highlights: ["Basic of IT","Windows","MS Office","Word","Power Pount","Excel","Acess","HTML", "Web Technology", "Tally Prime", "Printing","English and Kannada Typing","Presentation"],
+    highlights: ["Basic of IT","Windows","MS Office","Word","Power Point","Excel","Acess","HTML", "Web Technology", "Tally Prime", "Printing","English and Kannada Typing","Presentation"],
     description: "We offer comprehensive training in a wide range of Information Technology topics, including basic computer skills, Windows operating system, Microsoft Office suite—Word, PowerPoint, Excel, and Access—web technologies such as HTML and website development, accounting software Tally Prime, printing processes, professional presentation techniques, and English and Kannada typing proficiency",
     type: "Diploma",
     duration: "6 Months"
@@ -71,7 +72,7 @@ const coursesData = [
     title: "Diploma in Desktop Publishing (DTP)",
     image: "https://source.unsplash.com/400x300/?photoshop,coreldraw",
     highlights: ["Photoshop", "CorelDRAW", "InDesign"],
-    description: "This course provides hands-on training in professional graphic design tools, including Adobe Photoshop for image editing and retouching, CorelDRAW for vector illustration and layout design, and Adobe InDesign for creating visually compelling print and digital publications. Learners will develop practical skills in visualcomposition, branding, and design workflows used across creative industries ",
+    description: "This course provides hands-on training in professional graphic design tools, including Adobe Photoshop for image editing and retouching, CorelDRAW for vector illustration and layout design, and Adobe InDesign for creating visually compelling print and digital publications. Learners will develop practical skills in visual composition, branding, and design workflows used across creative industries ",
     type: "Diploma",
     duration: "3 Months"
   },
@@ -87,7 +88,7 @@ const coursesData = [
     title: "Diploma in Web Designing",
     image: "https://source.unsplash.com/400x300/?webdesign,html",
     highlights: ["Internet Technology","HTML", "Illustrator", "Photoshop", "CorelDRAW", "InDesign"],
-    description: "This course provides comprehensive training in web and graphic design, starting with Internet Technology and HTML to build foundational web development skills. It also includes hands-on learning with industry-standard design tools such as Adobe Illustrator for vector graphics, Adobe Photoshop for image editing, CorelDRAW for layout and illustration, and Adobe InDesign for professional publishing. The curriculum is designed to equip learners with both technical and creative skills for digitalcontent creation.",
+    description: "This course provides comprehensive training in web and graphic design, starting with Internet Technology and HTML to build foundational web development skills. It also includes hands-on learning with industry-standard design tools such as Adobe Illustrator for vector graphics, Adobe Photoshop for image editing, CorelDRAW for layout and illustration, and Adobe InDesign for professional publishing. The curriculum is designed to equip learners with both technical and creative skills for digital content creation.",
     type: "Diploma",
     duration: "3 Months"
   },
@@ -111,8 +112,16 @@ const coursesData = [
     title: "Certificate in Communicative English",
     image: "https://source.unsplash.com/400x300/?english,speaking",
     highlights: ["Basic English Grammer", "Spoken English"],
-    description: "This course focuses on building essential language skills, covering Basic English Grammar to strengthen foundational understanding of sentence structure, tenses, and usage, along with Spoken English to enhance verbalcommunication, pronunciation, and conversational fluency for everyday and professional interactions.",
+    description: "This course focuses on building essential language skills, covering Basic English Grammar to strengthen foundational understanding of sentence structure, tenses, and usage, along with Spoken English to enhance verbal communication, pronunciation, and conversational fluency for everyday and professional interactions.",
     type: "SoftSkill",
+    duration: "2 Months"
+  },
+  {
+    title: "Certificate in Communicative English",
+    image: "https://source.unsplash.com/400x300/?english,speaking",
+    highlights: ["Basic English Grammer", "Spoken English"],
+    description: "This course focuses on building essential language skills, covering Basic English Grammar to strengthen foundational understanding of sentence structure, tenses, and usage, along with Spoken English to enhance verbal communication, pronunciation, and conversational fluency for everyday and professional interactions.",
+    type: "Certificate",
     duration: "2 Months"
   },
   {
@@ -129,6 +138,7 @@ const coursesData = [
   "Voucher Transaction",
   "Create Company/Ledger/Items",
   "Sale/Purchase Bill with GST",
+  "Basic and Advance Excel",
   "Advance Accounting and Inventory"
 ],
     description: "This course provides comprehensive training in core and advanced accounting practices, covering topics such as Fundamental Principles of Accounting, Financial Reports, and the use of Accounting Software. Learners will gain practical knowledge in Applying Accounting Standards and Regulations, handling Tax Deducted at Source (TDS), and managing Tally Data including printing, import, and export. The curriculum also includes Finalisation of Accounts, Voucher Transactions, and the creation of Company, Ledger, and Items. Additionally, students will learn to process Sale and Purchase Bills with GST and develop expertise in Advance Accounting and Inventory Management, preparing them for real-world financial operations.",
@@ -136,7 +146,7 @@ const coursesData = [
     duration: "3 Months"
   },
   {
-    title: "skill Development Program",
+    title: "Skill Development Program",
     image: "https://source.unsplash.com/400x300/?c++,code",
     highlights: [
   "Certificate Course in C and C++ Programming",
@@ -145,14 +155,14 @@ const coursesData = [
   "Certificate Course in Python",
   "Certificate Course in R"
 ],
-    description: "This course offers a robust foundation in programming and database management through a series of specialized modules, including the Certificate Course in C and C++ Programming for structured and object-oriented coding, the Certificate Course in Oracle and RDBMS for mastering relational database systems, and the Certificate Course in OOPs in Java Programming to develop scalable, object-oriented applications. Additionally, learners will gain proficiency in modern programming languages through the Certificate Course in Python and the Certificate Course in R, equipping them with versatile skills for data analysis, software development, and computational problem-solving.",
+    description: "This course offers a robust foundation in programming and database management through a series of specialized modules, including the Certificate Course in C and C++ Programming for structured and object-oriented programing, the Certificate Course in Oracle and RDBMS for mastering relational database systems, and the Certificate Course in OOPs in Java Programming to develop scalable, object-oriented applications. Additionally, learners will gain proficiency in modern programming languages through the Certificate Course in Python and the Certificate Course in R, equipping them with versatile skills for data analysis, software development, and computational problem-solving.",
     type: "Professional",
     duration: "N/A"
   },
   {
     title: "Diploma in Computer & Office Management",
     image: "https://source.unsplash.com/400x300/?office,computer",
-    highlights: ["Basic IT","Word","Powerpoint","MS Office", "Internet", "Kannada and English Typing", "Advance Excel"],
+    highlights: ["Basic IT","Windows","Word","Powerpoint","MS Office", "Internet", "Kannada and English Typing", "Advance Excel"],
     description: "This course provides essential digital literacy and office productivity skills, covering Basic IT concepts, MS Word for document creation, PowerPoint for presentations, and the full suite of MS Office tools for professional tasks. Learners will also gain practical experience with Internet usage, develop typing proficiency in both Kannada and English, and advance their data handling capabilities through Advanced Excel training for complex spreadsheet operations and analysis.",
     type: "Diploma",
     duration: "4 Months"
@@ -160,24 +170,24 @@ const coursesData = [
   {
     title: "Diploma in Computer Teacher Training",
     image: "https://source.unsplash.com/400x300/?teacher,computer",
-    highlights: ["DCA", "Fast Master Typing", "Teaching Skills", "Programming Languages","Accounting Software"],
-    description: "This course offers a diverse skill set designed for both technical and professional development, including **DCA (Diploma in Computer Applications)** for foundational IT knowledge, **Fast Master Typing** to improve speed and accuracy in keyboarding, and **Teaching Skills** to enhance instructional techniques. It also covers key **Programming Languages** for software development and **Accounting Software** to manage financial operations effectively, preparing learners for a wide range of career opportunities.",
+    highlights: ["DCA", "Fast Master Typing", "Teaching Skills", "Programming Languages","Designing Software","Accounting Software"],
+    description: "This course offers a diverse skill set designed for both technical and professional development, including DCA (Diploma in Computer Applications) for foundational IT knowledge, Fast Master Typing to improve speed and accuracy in keyboarding, and Teaching Skills to enhance instructional techniques. It also covers key Programming Languages for software development and Accounting Software to manage financial operations effectively, preparing learners for a wide range of career opportunities.",
     type: "Diploma",
     duration: "12 Months"
   },
   {
     title: "Diploma in Computer Science",
     image: "https://source.unsplash.com/400x300/?computer,science",
-    highlights: ["C/C++", "Java", "Python", "R", "HTML"],
-    description: "This course provides comprehensive programming training, covering foundational and advanced languages such as C/C++ for structured and object-oriented programming, Java for building robust applications, Python for versatile scripting and data analysis, and R for statisticalcomputing. Additionally, learners will gain essential web development skills through HTML, enabling them to create and structure web content effectively",
+    highlights: ["C/C++", "Java", "Python", "R", "HTML","Oracle","Object oriented programming","RDBMS","Ms Office","CarelDRAW"],
+    description: "This course provides comprehensive programming training, covering foundational and advanced languages such as C/C++ for structured and object-oriented programming, Java for building robust applications, Python for versatile scripting and data analysis, and R for statistical computing. Additionally, learners will gain essential web development skills through HTML, enabling them to create and structure web content effectively",
     type: "Diploma",
     duration: "12 Months"
   },
   {
-    title: "Diploma in Marster Typing",
+    title: "Diploma in Master Typing",
     image: "https://source.unsplash.com/400x300/?computer,science",
     highlights: ["Kannada Typing", "English Typing", "Fast Master Typing"],
-    description: "This course focuses on enhancing typing proficiency across multiple languages and formats, offering training in Kannada Typing and English Typing to support bilingualcommunication. It also includes Fast Master Typing techniques to improve speed, accuracy, and overall efficiency in keyboarding for professional and personal use.",
+    description: "This course focuses on enhancing typing proficiency across multiple languages and formats, offering training in Kannada Typing and English Typing to support bilingual communication. It also includes Fast Master Typing techniques to improve speed, accuracy, and overall efficiency in keyboarding for professional and personal use.",
     type: "Diploma",
     duration: "2 Months"
   },
@@ -185,7 +195,7 @@ const coursesData = [
     title: "Basic Computer Applications",
     image: "https://source.unsplash.com/400x300/?computer,science",
     highlights: ["Basics of IT", "Windows", "MS Office", "Word", "PowerPoint", "Excel", "Internet"],
-    description: "This course provides foundational training in digital skills, starting with the **Basics of IT** and **Windows** operating system to build core computer literacy. Learners will gain hands-on experience with **MS Office** applications, including **Word** for document creation, **PowerPoint** for presentations, and **Excel** for data management. The curriculum also covers effective **Internet** usage, equipping participants with essential tools for navigating and working in a modern digital environment.",
+    description: "This course provides foundational training in digital skills, starting with the Basics of IT and Windows operating system to build core computer literacy. Learners will gain hands-on experience with MS Office applications, including Word for document creation, PowerPoint for presentations, and Excel for data management. The curriculum also covers effective Internet usage, equipping participants with essential tools for navigating and working in a modern digital environment.",
     type: "BasicCourse",
     duration: "2 Months"
   },
@@ -302,7 +312,7 @@ const coursesData = [
     duration: "N/A"
   },
   {
-    title: "CORELRDRAW",
+    title: "CORELDRAW",
     image: "https://source.unsplash.com/400x300/?coreldraw,vector",
     highlights: ["Vector Design", "Illustrations", "Posters"],
     description: "Design logos, posters, and vector graphics using CorelDRAW effectively.",

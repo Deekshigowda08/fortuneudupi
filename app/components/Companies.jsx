@@ -152,7 +152,7 @@ const Companies = () => {
 
       <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start mb-10'>
         <div className='max-w-3xl sm:text-lg leading-relaxed sm:mt-30 mt-1  ml-6'>
-          <span className="text-xl  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students.</strong>
+          <span className="text-xl mb-2 sm:mb-0  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students.</strong>
         </div>
 
         <Swiper
@@ -160,7 +160,7 @@ const Companies = () => {
           effect="cards"
           grabCursor={true}
           loop={true}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
           className="h-[350px] w-[300px] mt-10 mx-auto overflow-hidden"
         >
           {teachers.map(({ photo, name, description, gradient }, index) => (

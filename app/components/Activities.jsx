@@ -10,7 +10,7 @@ const activities = [
   {
     id: "02",
     title: "AFFILIATED WITH VTU",
-    subtitle: "At Fortune Computer Classes, <strong>we’re proud to support students affiliated with Visvesvaraya Technological University (VTU)</strong>. Our dedicated doubt clearance sessions ensure personalized guidance, helping VTU learners tackle challenging concepts with confidence. Led by expert instructors, our approach enhances understanding and fosters academic success—making your journey through VTU smoother and more rewarding.",
+    subtitle: "At Fortune Computer Classes, <strong>we’re proud to support students \"Affiliated with Visvesvaraya Technological University\" (VTU)</strong>. Our dedicated doubt clearance sessions ensure personalized guidance, helping VTU learners tackle challenging concepts with confidence. Led by expert instructors, our approach enhances understanding and fosters academic success—making your journey through VTU smoother and more rewarding.",
     image: "/activities/act2.jpg",
   },
   {
@@ -25,7 +25,7 @@ const Activities = (id) => {
   return (
     <section id="addon" className="px-6 py-20 md:px-16 lg:px-32 bg-white text-black mt-2">
       <div className="mb-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold">Add On Provided By</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold">Add-Ons Provided By</h2>
         <p className="text-indigo-600 font-medium mt-2">Fortune Computer Classes</p>
       </div>
 
