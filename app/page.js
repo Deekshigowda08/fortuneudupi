@@ -51,7 +51,7 @@ export default function Home() {
       { title: 'Inspire Young Minds', subtitle: 'Uplift the next generation of digital learners' },
       { title: 'Shape Your Career', subtitle: 'Get skilled. Get certified. Get hired.' },
       { title: 'Digital Literacy for All', subtitle: 'From beginners to pros — we teach them all' },
-      { title: 'Excellence from Since 15 Years', subtitle: '15+ Years of Excellence in Computer Education' },
+      { title: 'Excellence Since 15 Years', subtitle: '15+ Years of Excellence in Computer Education' },
     ];
   return (
     <main className="bg-[#101129] relative text-white">
@@ -105,7 +105,7 @@ export default function Home() {
         </nav>
       </div>
       {/* Hero Section with Swiper */}
-      <section className="h-[65vh] mt-20  flex items-center justify-center bg-[#101129] relative">
+      <section className="h-[62vh] mt-20  flex items-center justify-center bg-[#101129] relative">
         <Swiper
           effect="coverflow"
           grabCursor

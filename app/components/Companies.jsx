@@ -102,93 +102,57 @@ const teachers = [
 
 const Companies = () => {
   return (
-    <>
-    <section  id="faculty" className="w-[99vw] overflow-hidden h-full mx-auto hidden bg-[#101129] md:block mt-10 px-5">
-      <h3 className="text-4xl mb-7 font-bold text-center">About Faculty And Students</h3>
+    <section
+      id="faculty"
+      className="w-full overflow-hidden h-full mx-auto bg-[#101129] mt-10 px-5"
+    >
+      <h3 className="text-2xl sm:text-3xl md:text-4xl mb-7 font-bold text-center text-white">
+        About Faculty And Students
+      </h3>
 
-      <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start mb-10'>
-        <div className='max-w-3xl sm:text-lg leading-relaxed sm:mt-30 mt-1  ml-10'>
-          <span className="text-2xl  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students</strong>, helping them achieve their academic and professional goals. Our educators combine years of practical experience with a commitment to fostering an engaging, dynamic learning environment. Their ability to break down complex concepts and present them in a clear, approachable manner ensures that every student receives the highest quality of instruction. We take pride in our faculty's dedication to empowering students and driving success, making them some of the best in the industry.
+      <div className="flex flex-col md:flex-row justify-between items-center gap-10 max-w-7xl mx-auto">
+        {/* Text Content */}
+        <div className="text-white max-w-3xl text-base sm:text-lg leading-relaxed">
+          <span className="text-2xl sm:text-3xl font-serif leading-none">O</span>
+          ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students</strong>, helping them achieve their academic and professional goals. Our educators combine years of practical experience with a commitment to fostering an engaging, dynamic learning environment. Their ability to break down complex concepts and present them in a clear, approachable manner ensures that every student receives the highest quality of instruction.
         </div>
 
+        {/* Swiper Slider */}
         <Swiper
           modules={[EffectCards, Autoplay]}
           effect="cards"
           grabCursor={true}
           loop={true}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
-          className="h-[300px] w-full sm:h-[500px] sm:w-[300px] mx-auto"
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          className="h-[400px] w-[300px] sm:h-[400px] sm:w-[300px] md:h-[450px] md:w-[300px] mb-10"
         >
-          {teachers.map(({ photo, name, description, gradient }, index) => (
+          {teachers.map(({ name, description, gradient }, index) => (
             <SwiperSlide
               key={index}
               style={{
                 backgroundImage: gradient,
-                borderRadius: '1rem',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '1rem',
-                boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+                borderRadius: "1rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "1rem",
+                boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
               }}
             >
               <div className="text-center p-4 bg-white bg-opacity-70 rounded-lg shadow-md">
-               
-
-                {/* Teacher Name and Description */}
-                
-                <p className="text-lg  font-bold text-gray-600 mt-2">"{description}"</p>
-                <p className="text-sm text-right font-bold text-gray-800 mt-4">-{name}</p>
+                <p className="text-md sm:text-lg font-semibold text-gray-600 mt-2">
+                  "{description}"
+                </p>
+                <p className="text-sm sm:text-base text-right font-bold text-gray-800 mt-4">
+                  - {name}
+                </p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
     </section>
-
-    {/* This is for phone */}
-    <section  id="faculties" className="w-[100vw] overflow-hidden h-full mx-auto md:hidden block mt-10 px-5">
-      <h3 className="text-2xl mb-7 font-bold text-center">About Faculty And Students</h3>
-
-      <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start mb-10'>
-        <div className='max-w-3xl sm:text-lg leading-relaxed sm:mt-30 mt-1  ml-6'>
-          <span className="text-xl mb-2 sm:mb-0  font-serif  leading-none">O</span>ur faculty members bring a wealth of experience and in-depth knowledge to every course they teach. Each instructor is an expert in their respective domain, possessing not only a comprehensive understanding of the subject matter but also a proven track record of excellence in teaching. With a passion for education, <strong>they have successfully mentored and guided over 500 students.</strong>
-        </div>
-
-        <Swiper
-          modules={[EffectCards, Autoplay]}
-          effect="cards"
-          grabCursor={true}
-          loop={true}
-          autoplay={{ delay: 6000, disableOnInteraction: false }}
-          className="h-[350px] w-[300px] mt-10 mx-auto overflow-hidden"
-        >
-          {teachers.map(({ photo, name, description, gradient }, index) => (
-            <SwiperSlide
-              key={index}
-              style={{
-                backgroundImage: gradient,
-                borderRadius: '1rem',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '1rem',
-                boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
-              }}
-            >
-              <div className="text-center p-4 bg-white bg-opacity-70 rounded-lg shadow-md">
-
-                {/* Teacher Name and Description */}
-                <p className="text-md  font-bold text-gray-600 mt-2">"{description}"</p>
-                <p className="text-sm text-right font-extrabold text-gray-800 mt-4">-{name}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
-    </>
-  )
-}
+  );
+};
 
 export default Companies;
