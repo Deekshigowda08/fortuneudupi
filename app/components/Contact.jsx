@@ -169,7 +169,7 @@ const Contact = () => {
       <p>
         <FaMapMarkerAlt className="inline-block mr-2 text-green-500" />
         <a
-          href="https://maps.app.goo.gl/p67NYm99JPjzWzk47"
+          href="https://maps.app.goo.gl/KcMUbs6KQoprC6L17?g_st=aw"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:underline text- px-1 text-sm"

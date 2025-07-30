@@ -239,6 +239,14 @@ export default function Home() {
       <li>Accounts, Statistics, Maths</li>
       <li>DCA, PGDCA, Spoken English</li>
       <li>Placement Assistance</li>
+      <div className="text-center text-lg font-extrabold mt-2">
+  <div>We collaborate with</div>
+  <div className="flex justify-center items-center gap-2 mt-1">
+    <img src="/companies/csc.png" alt="CSC" className="w-22 h-10 mx-auto" />
+    <img src="/companies/nsdc.png" alt="NSDC" className="w-32 h-10 mx-auto " />
+  </div>
+</div>
+
     </ul>
   </div>
 )}
