@@ -145,7 +145,7 @@ const Contact = () => {
         <p>
           <FaPhoneAlt className="inline-block mr-2 text-blue-500" />
           <a href="tel:+919743294616" className="hover:underline text-white text-sm font-bold">+91-9743294616</a> /{" "}
-          <a href="tel:+918618638126" className="hover:underline text-white text-sm font-bold">+91-8618638126</a>
+          <a href="tel:+919916918772" className="hover:underline text-white text-sm font-bold">+91-9916918772</a>
         </p>
         <p>
           <MdEmail className="inline-block mr-2   text-red-400" />
